@@ -1,0 +1,27 @@
+<div class="user-input-container">
+  <!-- Email input with validation-->
+  <mat-form-field class="full-length">
+    <input matInput placeholder="Enter your email" [formControl]="email" required>
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <!-- Password input with validation-->
+  <mat-form-field class="full-length" (value)="password">
+    <input matInput placeholder="Enter your password" [type]="passwordHide ? 'password' : 'text'" [formControl]="password"
+      required (change)="setUserPassword(password)">
+    <i class="cursor-pointer" matSuffix (click)="passwordHide = !passwordHide">
+      {{passwordHide ? 'show' : 'unshow'}}
+    </i>
+    <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}</mat-error>
+  </mat-form-field>
+
+  <!-- Confirmed password input with validation-->
+  <mat-form-field class="full-length" (value)="confirmPassword">
+    <input matInput placeholder="Confirm your password" [type]="confirmPasswordHide ? 'password' : 'text'" [formControl]="confirmPassword"
+      required (change)="setUserConfirmPassword(confirmPassword)">
+    <i class="cursor-pointer" matSuffix (click)="confirmPasswordHide = !confirmPasswordHide">
+      {{confirmPasswordHide ? 'show' : 'unshow'}}
+    </i>
+    <mat-error *ngIf="confirmPassword.invalid">{{getConfirmPasswordErrorMessage()}}</mat-error>
+  </mat-form-field>
+</div>
