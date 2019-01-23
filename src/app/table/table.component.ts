@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort, MatTableDataSource, MatPaginator } from '@angular/material';
 import { SmsData } from '../SmsData'
-import data from '../../assets/data.json';
+import { data } from '../../assets/data';
 
 @Component({
   selector: 'app-table',
@@ -35,6 +35,7 @@ export class TableComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // console.log(data.default)
     /** Sort table */
     this.dataSource.sort = this.sort;
 
