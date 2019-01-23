@@ -1,0 +1,10 @@
+To use this app, please follow below steps:
+1. Clone this project to your local host.
+2. go to folder CodeChallenge_TableForm/
+3. Run "npm install"
+4. Run "ng serve"
+5. Open browser and surf http://localhost:4200/
+6. Finish
+
+In case, there is any problem. Please run "sudo npm install -g @angular/cli".
+Then redo from step 4.
