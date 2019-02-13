@@ -1,7 +1,7 @@
 <div class="user-input-container">
   <!-- Email input with validation-->
   <mat-form-field class="full-length">
-    <input matInput placeholder="Enter your email" [formControl]="email" required>
+    <input matInput placeholder="Enter your email" [formControl]="email" (keyup)="onEmailTyping($event)" required>
     <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
   </mat-form-field>
 

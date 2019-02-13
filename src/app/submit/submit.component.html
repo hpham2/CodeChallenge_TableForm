@@ -1,3 +1,11 @@
-<p>
-  submit works!
-</p>
+<div>
+  <p><b>**This submit button below does nothing, but notify your email only.
+      Specifically, no data will be sent to backend server or any database.</b></p>
+  <p><b>**The submit button is disabled, until you check this.</b></p>
+  <mat-checkbox color="warn" (click)="checkboxChecked()">Check me to ensure that you know the function of submit button!
+  </mat-checkbox>
+</div>
+
+<br>
+
+<button mat-raised-button color="accent" [disabled]="disableButton" (click)="buttonClick()">Click me!</button>

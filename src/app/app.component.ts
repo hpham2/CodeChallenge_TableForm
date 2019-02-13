@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sms-code-challenge';
+  userEmail = null;
+
+  setUserEmail(userEmail) {
+    this.userEmail = userEmail;
+    console.log(this.userEmail);
+}
 }

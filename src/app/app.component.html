@@ -3,24 +3,34 @@
 
   <div id="body-app">
     <!-- table component-->
-    <h2>Sortable table of your data</h2>
+    <div>
+      <h2>Sortable table of your data</h2>
 
-    <p><i><strong> Instruction: </strong></i></p>
-    <p> Please click the title of any column to sort the table, according to that column.</p>
-    <p> In addition, use paginator to select number of objects to be displayed</p>
-    <app-table></app-table>
+      <p><i><strong> Instruction: </strong></i></p>
+      <p> Please click the title of any column to sort the table, according to that column.</p>
+      <p> In addition, use paginator to select number of objects to be displayed</p>
+
+      <app-table></app-table>
+    </div>
 
     <br>
 
     <!-- form component-->
-    <h2>Required information</h2>
+    <div>
+      <h2>Required information</h2>
 
-    <p><i><strong> Instruction: </strong></i></p>
-    <p> Please enter your data, according to the description in each textbox.</p>
-    <p> In case of incorrect input, there would be an instruction to correct.</p>
-    <app-form></app-form>
+      <p><i><strong> Instruction: </strong></i></p>
+      <p> Please enter your data, according to the description in each textbox.</p>
+      <p> In case of incorrect input, there would be an instruction to correct.</p>
+
+      <app-form (emailChange)='setUserEmail($event)'></app-form>
+    </div>
+
+    <br>
 
     <!-- submit component -->
-    
+    <div>
+      <app-submit [userEmail]="userEmail"></app-submit>
+    </div>
   </div>
 </div>
