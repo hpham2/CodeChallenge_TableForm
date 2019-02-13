@@ -11,12 +11,14 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule, MatInputModule, MatIconModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SubmitComponent } from './submit/submit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
-    FormComponent
+    FormComponent,
+    SubmitComponent
   ],
   imports: [
     BrowserAnimationsModule,
