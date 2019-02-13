@@ -8,6 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class SubmitComponent implements OnInit {
   @Input() userEmail;
 
+  /**
+   * @variable
+   */
+  hiddenClassWrongEmail = "unshow";
+  hiddenClassRightEmail = "unshow";
   disableButton = true;
 
   constructor() { }
@@ -15,15 +20,20 @@ export class SubmitComponent implements OnInit {
   ngOnInit() {
   }
 
+  /** when checkbox is checked */
   checkboxChecked() {
     this.disableButton = !this.disableButton
   }
 
+  /** when button is clicked */
   buttonClick() {
     if (this.userEmail != null) {
       alert("Your email is: " + this.userEmail);
+      this.hiddenClassWrongEmail = "unshow";
+      this.hiddenClassRightEmail = null;
     } else {
-      alert("Your email is invalid ");
+      this.hiddenClassRightEmail = "unshow";
+      this.hiddenClassWrongEmail = null;
     }
   }
 }
