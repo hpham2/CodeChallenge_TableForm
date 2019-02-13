@@ -12,6 +12,8 @@ import { MatPaginatorModule, MatInputModule, MatIconModule } from '@angular/mate
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SubmitComponent } from './submit/submit.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { SubmitComponent } from './submit/submit.component';
     MatFormFieldModule,
     MatInputModule,
     FormsModule, ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    MatCheckboxModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
