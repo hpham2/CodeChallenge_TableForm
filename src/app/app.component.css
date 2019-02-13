@@ -1,3 +1,17 @@
 .main-container {
   padding: 1% 5% 1% 5%;
+  background-color: azure;
+}
+
+h1, h2, p {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+h1 {
+  color: rgb(240, 148, 11);
+  text-align: center;
+}
+
+header { 
+  display: block;
 }
