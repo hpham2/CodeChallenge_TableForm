@@ -23,14 +23,14 @@
       <p> Please enter your data, according to the description in each textbox.</p>
       <p> In case of incorrect input, there would be an instruction to correct.</p>
 
-      <app-form></app-form>
+      <app-form (emailChange)='setUserEmail($event)'></app-form>
     </div>
 
     <br>
-    
+
     <!-- submit component -->
     <div>
-      <app-submit></app-submit>
+      <app-submit [userEmail]="userEmail"></app-submit>
     </div>
   </div>
 </div>

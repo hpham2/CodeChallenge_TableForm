@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-submit',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./submit.component.css']
 })
 export class SubmitComponent implements OnInit {
-  
+  @Input() userEmail;
+
   disableButton = true;
 
   constructor() { }
@@ -19,6 +20,10 @@ export class SubmitComponent implements OnInit {
   }
 
   buttonClick() {
-    alert("Hello! I am an alert box!!");
+    if (this.userEmail != null) {
+      alert("Your email is: " + this.userEmail);
+    } else {
+      alert("Your email is invalid ");
+    }
   }
 }

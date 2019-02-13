@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -12,6 +12,10 @@ import { FormControl, Validators } from '@angular/forms';
  * @class
  */
 export class FormComponent {
+  /** Throw email into other component, e.g. submit component. */
+  @Output() emailChange = new EventEmitter();
+  userEmail = null;
+
   /**
    * @variables
    */
@@ -26,7 +30,17 @@ export class FormComponent {
   confirmPassword = new FormControl('', [Validators.required]);
 
   constructor() { }
-
+  
+  /** Read user email */
+  onEmailTyping(event: any) {
+    this.userEmail = event.target.value;
+    if(this.email.hasError('required') || this.email.hasError('email')) {
+      this.emailChange.emit(null);
+    } else {
+      this.emailChange.emit(this.userEmail);
+    }
+  }
+  
   /** Function return error string for email input */
   getErrorMessage() {
     return this.email.hasError('required') ? 'This cannot be empty' :
@@ -40,7 +54,7 @@ export class FormComponent {
   }
 
   getConfirmPasswordErrorMessage() {
-    if(this.userPassword != this.userConfirmPassword) {
+    if (this.userPassword != this.userConfirmPassword) {
       return 'Confirm password does not match the upper password'
     }
     return this.confirmPassword.hasError('required') ? 'This cannot be empty' : '';
@@ -49,8 +63,8 @@ export class FormComponent {
   /** Set the password value for the comparison with confirmed password */
   setUserPassword(password) {
     this.userPassword = password.value;
-    if(this.userPassword != this.userConfirmPassword) {
-      this.confirmPassword.setErrors({'incorrect': true});
+    if (this.userPassword != this.userConfirmPassword) {
+      this.confirmPassword.setErrors({ 'incorrect': true });
     } else {
       this.confirmPassword.setErrors(null);
     }
@@ -59,8 +73,8 @@ export class FormComponent {
   /** Set the confirm password value for the comparison with entered password */
   setUserConfirmPassword(confirmPassword) {
     this.userConfirmPassword = confirmPassword.value
-    if(this.userPassword != this.userConfirmPassword) {
-      this.confirmPassword.setErrors({'incorrect': true});
+    if (this.userPassword != this.userConfirmPassword) {
+      this.confirmPassword.setErrors({ 'incorrect': true });
     } else {
       this.confirmPassword.setErrors(null);
     }
