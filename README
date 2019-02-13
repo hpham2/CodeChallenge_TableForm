@@ -26,4 +26,4 @@ and show a corresponding message.
 2. dialog shown instead of normal alert, on button clicked.
 3. navigation for dashboard and about (router).
 4. read data by http
-5. some other fancy stuffs, e.g. click to change background.
+5. some other fancy stuffs, e.g. click to change background, show matcard pictures with bootstrap.
