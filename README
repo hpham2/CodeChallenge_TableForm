@@ -20,3 +20,10 @@ range.
 **password**, **confirm password**. All fields are required, password fields
 have to match and at least 8 characters. If a field is not valid, highlight it
 and show a corresponding message.
+
+### Planned tasks:
+1. tabs separating table and form, comprised in dashboard component.
+2. dialog shown instead of normal alert, on button clicked.
+3. navigation for dashboard and about (router).
+4. read data by http
+5. some other fancy stuffs, e.g. click to change background.
