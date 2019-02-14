@@ -15,6 +15,8 @@ import { SubmitComponent } from './submit/submit.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatIconModule,
     MatCheckboxModule,
     MatButtonModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSidenavModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

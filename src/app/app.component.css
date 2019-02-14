@@ -1,6 +1,17 @@
 .main-container {
   padding: 1% 5% 1% 5%;
-  background-color: azure;
+}
+
+option1-background {
+  background-color: rgb(253, 246, 227);;
+}
+
+option2-background {
+  background-color: rgb(116, 253, 253);;
+}
+
+none-background {
+  background-color: rgb(255, 255, 255);;
 }
 
 h1, h2, p {
@@ -15,4 +26,8 @@ h1 {
 
 header { 
   display: block;
+}
+
+mat-form-field {
+  width: 80%;
 }

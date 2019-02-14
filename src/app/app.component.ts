@@ -8,9 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'sms-code-challenge';
   userEmail = null;
+  selectedBackground = 'option1-background';
 
   setUserEmail(userEmail) {
     this.userEmail = userEmail;
     console.log(this.userEmail);
-}
+  }
 }
