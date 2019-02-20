@@ -17,13 +17,24 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSelectModule } from '@angular/material/select';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './about/about.component';
+
+const appRoutes: Routes = [
+  { path: 'dashboard', component: AppComponent },
+  { path: 'about', component: AboutComponent },
+  { path: '',   redirectTo: '/dashboard', pathMatch: 'full' },
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
     FormComponent,
-    SubmitComponent
+    SubmitComponent,
+    MainNavComponent,
+    AboutComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -39,9 +50,13 @@ import { MatSelectModule } from '@angular/material/select';
     MatButtonModule,
     MatTabsModule,
     MatSidenavModule,
-    MatSelectModule
+    MatSelectModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [MainNavComponent]
 })
 export class AppModule { }
