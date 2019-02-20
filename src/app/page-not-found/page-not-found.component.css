@@ -1,0 +1,11 @@
+#notfound  {
+    background-image: url("../../assets/404.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    height: 70%;
+    width: 70%;
+    position: absolute;
+    top: 15%;
+    left: 15%;
+}
