@@ -6,11 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'sms-code-challenge';
   userEmail = null;
+  selectedBackground = 'none-background';
 
   setUserEmail(userEmail) {
     this.userEmail = userEmail;
     console.log(this.userEmail);
-}
+  }
 }
