@@ -1,4 +1,4 @@
-<div [ngClass]="'main-container selectedBackground'">
+<div class="main-container" [ngClass]="selectedBackground">
   <h1 id="top-name">CODE CHALLENGE</h1>
 
   <mat-tab-group [backgroundColor]="'primary'">
@@ -42,9 +42,9 @@
             <p><i><strong> Background: </strong></i></p>
             
             <mat-select [(value)]="selectedBackground">
-                <mat-option>None</mat-option>
                 <mat-option value="option1-background">Dark gold</mat-option>
                 <mat-option value="option2-background">Azure</mat-option>
+                <mat-option value="none-background">White</mat-option>
               </mat-select>
             </mat-form-field>
         </div>
