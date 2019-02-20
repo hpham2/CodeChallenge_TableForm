@@ -8,6 +8,7 @@ const appRoutes: Routes = [
   { path: 'dashboard', component: AppComponent },
   { path: 'about', component: AboutComponent },
   { path: '',   redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '**', component: AboutComponent },
 ];
  
 @NgModule({

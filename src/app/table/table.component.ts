@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort, MatTableDataSource, MatPaginator } from '@angular/material';
 import { SmsData } from '../SmsData'
+import { DataServicesService } from '../services/data-services.service';
 import { data } from '../../assets/data';
 
 @Component({
@@ -16,12 +17,7 @@ import { data } from '../../assets/data';
 export class TableComponent implements OnInit {
   /** Variable defines the order of columns in table */
   displayedColumns: string[] = ['city', 'start_date', 'end_date', 'color', 'status', 'price'];
-
-  /** data fetched from json.file in assets folder */
-  smsData: SmsData[]  = data;
-
-  /** data used for the table */
-  dataSource = new MatTableDataSource(this.smsData);
+  dataSource;
 
   /** filterObject contains value of start and end date */
   filterObject = {
@@ -32,25 +28,30 @@ export class TableComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor() { }
+  constructor(private dataService: DataServicesService) { }
 
   ngOnInit() {
-    // console.log(data.default)
-    /** Sort table */
-    this.dataSource.sort = this.sort;
+    /** data fetched from json.file in assets folder */
+    this.dataService.getModel().subscribe(e => {
+      let data: any = e;
+      this.dataSource = new MatTableDataSource(data);
 
-    /** Separate table into pages */
-    this.dataSource.paginator = this.paginator;
+      /** Sort table */
+      this.dataSource.sort = this.sort;
 
-    /** filterPredicate is used for filtering table according to some specific columns */
-    this.dataSource.filterPredicate = function(data, filter: string): boolean {
-      /** parse string into object */
-      let filterObject = JSON.parse(filter);
+      /** Separate table into pages */
+      this.dataSource.paginator = this.paginator;
 
-      /** return data element matching start and end date  */
-      return data.start_date.toLowerCase().includes(filterObject.startDateFilterValue)
-        && data.end_date.toLowerCase().includes(filterObject.endDateFilterValue);
-    };
+      /** filterPredicate is used for filtering table according to some specific columns */
+      this.dataSource.filterPredicate = function (data, filter: string): boolean {
+        /** parse string into object */
+        let filterObject = JSON.parse(filter);
+
+        /** return data element matching start and end date  */
+        return data.start_date.toLowerCase().includes(filterObject.startDateFilterValue)
+          && data.end_date.toLowerCase().includes(filterObject.endDateFilterValue);
+      };
+    })
   }
 
   /** Set start date value for filter object.
