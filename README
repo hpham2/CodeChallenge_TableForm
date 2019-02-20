@@ -25,5 +25,5 @@ and show a corresponding message.
 1. (DONE) tabs separating table and form, comprised in dashboard component.
 2. dialog shown instead of normal alert, on button clicked.
 3. (DONE) navigation for dashboard and about (router).
-4. read data by http
+4. (DONE) read data by http
 5. some other fancy stuffs, e.g. click to change background, change css for table, show matcard pictures with bootstrap.
