@@ -5,6 +5,10 @@ mat-drawer {
     /* margin-right: -10px; */
 }
 
+.example-container {
+    background-color: white !important;
+}
+
 button {
     width: 100%;
     margin-top: 15px;
