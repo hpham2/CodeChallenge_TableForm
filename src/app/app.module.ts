@@ -22,6 +22,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: AppComponent },
@@ -36,7 +37,8 @@ const appRoutes: Routes = [
     FormComponent,
     SubmitComponent,
     MainNavComponent,
-    AboutComponent
+    AboutComponent,
+    PageNotFoundComponent
   ],
   imports: [
     HttpClientModule,
