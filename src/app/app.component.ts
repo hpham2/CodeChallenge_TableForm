@@ -11,6 +11,5 @@ export class AppComponent {
 
   setUserEmail(userEmail) {
     this.userEmail = userEmail;
-    console.log(this.userEmail);
   }
 }

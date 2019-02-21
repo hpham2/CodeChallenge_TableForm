@@ -1,16 +1,8 @@
-/* :host {
-    position: absolute !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    top: 0 !important;
-  } */
-
 mat-drawer {
-    background-color: bisque;
-    /* overflow: hidden !important; */
+    /* background-color: bisque; */
+    background-image: linear-gradient(to bottom right, rgb(255, 94, 0), bisque);
+    border-color: bisque;
     padding-top: 15px;
-    /* margin-right: -10px; */
 }
 
 .example-container {
@@ -26,6 +18,7 @@ button {
 h2 {
     font-family: "Comic Sans MS", cursive, sans-serif;
     margin: 15px 10px 10px 10px;
-    color: rgb(240, 38, 11);
+    color: rgb(252, 252, 252);
     text-align: center;
+    font-weight: bold;
 }
