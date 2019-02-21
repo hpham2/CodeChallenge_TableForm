@@ -3,6 +3,7 @@ mat-drawer {
     background-image: linear-gradient(to bottom right, rgb(255, 94, 0), bisque);
     border-color: bisque;
     padding-top: 15px;
+    width: 15%;
 }
 
 .example-container {
