@@ -7,13 +7,16 @@ import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
 import { FormComponent } from './form/form.component';
 import { AboutComponent } from './about/about.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SubmitComponent } from './submit/submit.component';
+import { AlertDialog } from './submit/submit.component';
+
 
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule, MatInputModule, MatIconModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SubmitComponent } from './submit/submit.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -22,7 +25,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const appRoutes: Routes = [
   { path: 'dashboard', component: AppComponent },
@@ -31,11 +34,13 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
+  entryComponents: [SubmitComponent, AlertDialog],
   declarations: [
     AppComponent,
     TableComponent,
     FormComponent,
     SubmitComponent,
+    AlertDialog,
     MainNavComponent,
     AboutComponent,
     PageNotFoundComponent
@@ -56,7 +61,8 @@ const appRoutes: Routes = [
     MatTabsModule,
     MatSidenavModule,
     MatSelectModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [MainNavComponent]

@@ -23,7 +23,7 @@ and show a corresponding message.
 
 ### Planned tasks:
 1. (DONE) tabs separating table and form, comprised in dashboard component.
-2. dialog shown instead of normal alert, on button clicked.
+2. (DONE) dialog shown instead of normal alert, on button clicked.
 3. (DONE) navigation for dashboard and about (router).
 4. (DONE) read data by http
 5. (DONE) some other fancy stuffs, e.g. click to change background, change css for table, about page with bootstrap.
